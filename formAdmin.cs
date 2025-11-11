@@ -16,5 +16,12 @@ namespace Quan_Li_Tiem_Net
         {
             InitializeComponent();
         }
+
+        private void xuastHoasDonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formXuatHoaDon fXuatHoaDon = new formXuatHoaDon();
+            fXuatHoaDon.ShowDialog();
+        }
     }
 }

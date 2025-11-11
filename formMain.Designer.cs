@@ -59,10 +59,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 722);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 731);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1107, 39);
+            this.statusStrip1.Size = new System.Drawing.Size(1107, 30);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -70,14 +70,14 @@
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(155, 33);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(122, 25);
             this.toolStripStatusLabel1.Text = "date n time....";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("UTM Banque", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(235, 33);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(185, 25);
             this.toolStripStatusLabel2.Text = "màn hình chính";
             this.toolStripStatusLabel2.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
@@ -92,7 +92,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1107, 45);
+            this.menuStrip1.Size = new System.Drawing.Size(1107, 37);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,26 +107,26 @@
             this.hệThốngToolStripMenuItem.Font = new System.Drawing.Font("UTM Banque", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hệThốngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hệThốngToolStripMenuItem.Image")));
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(203, 41);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(161, 33);
             this.hệThốngToolStripMenuItem.Text = "hệ thống";
             // 
             // đăngNhậpToolStripMenuItem
             // 
             this.đăngNhậpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngNhậpToolStripMenuItem.Image")));
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(279, 42);
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
             this.đăngNhậpToolStripMenuItem.Text = "đăng nhập";
             this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(276, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(279, 42);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
             this.thoátToolStripMenuItem.Text = "thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -137,13 +137,13 @@
             this.giớiThiệuThànhViênToolStripMenuItem});
             this.danhMụcToolStripMenuItem.Font = new System.Drawing.Font("UTM Banque", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
-            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
+            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(146, 33);
             this.danhMụcToolStripMenuItem.Text = "danh mục";
             // 
             // giớiThiệuThànhViênToolStripMenuItem
             // 
             this.giớiThiệuThànhViênToolStripMenuItem.Name = "giớiThiệuThànhViênToolStripMenuItem";
-            this.giớiThiệuThànhViênToolStripMenuItem.Size = new System.Drawing.Size(443, 42);
+            this.giớiThiệuThànhViênToolStripMenuItem.Size = new System.Drawing.Size(342, 34);
             this.giớiThiệuThànhViênToolStripMenuItem.Text = "giới thiệu thành viên";
             this.giớiThiệuThànhViênToolStripMenuItem.Click += new System.EventHandler(this.giớiThiệuThànhViênToolStripMenuItem_Click);
             // 
@@ -155,9 +155,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 45);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 37);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(40, 677);
+            this.toolStrip1.Size = new System.Drawing.Size(40, 694);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "Time";
             // 
@@ -190,16 +190,16 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 119);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1107, 624);
+            this.pictureBox1.Size = new System.Drawing.Size(1107, 613);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // formMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 761);
