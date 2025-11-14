@@ -62,7 +62,7 @@ namespace Quan_Li_Tiem_Net
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 cpuInfo = "Không thể lấy thông tin CPU";
                 // Ghi lại lỗi nếu cần
@@ -96,7 +96,7 @@ namespace Quan_Li_Tiem_Net
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 gpuInfo = "Không thể lấy thông tin GPU";
                 // Bạn có thể ghi log lỗi ở đây nếu cần
@@ -134,7 +134,7 @@ namespace Quan_Li_Tiem_Net
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 ramInfo = "Không thể lấy thông tin RAM";
                 // Bạn có thể ghi log lỗi ở đây nếu cần

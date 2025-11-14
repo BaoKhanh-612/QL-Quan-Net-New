@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\FormDrrink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FormDrrink.Designer.cs">
+      <DependentUpon>FormDrrink.cs</DependentUpon>
+    </Compile>
     <Compile Include="database.cs">
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
@@ -56,11 +62,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="formAdmin.cs">
+    <Compile Include="Admin\formAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAdmin.Designer.cs">
+    <Compile Include="Admin\formAdmin.Designer.cs">
       <DependentUpon>formAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXuatHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXuatHoaDon.Designer.cs">
+      <DependentUpon>FormXuatHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="User\formConfirmPaymentPack.cs">
       <SubType>Form</SubType>
@@ -155,7 +167,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formAdmin.resx">
+    <EmbeddedResource Include="Admin\FormDrrink.resx">
+      <DependentUpon>FormDrrink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formConfirmPaymentPack.resx">

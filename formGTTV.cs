@@ -21,5 +21,7 @@ namespace Quan_Li_Tiem_Net
         {
             this.Close();
         }
+
+      
     }
 }
