@@ -10,7 +10,7 @@ namespace Quan_Li_Tiem_Net.Admin
         // Form user để gọi ReloadData sau khi admin sửa
         private readonly formDrink _userForm;
 
-        // Biến này sẽ lưu Mã đồ uống đang được chọn, an toàn hơn là đọc từ textbox
+        // Lưu Mã đồ uống đang được chọn
         private string _selectedMaDoUong = null;
 
         public FormDrrink(formDrink userForm)
@@ -18,12 +18,12 @@ namespace Quan_Li_Tiem_Net.Admin
             InitializeComponent();
             _userForm = userForm;
 
-            // Gắn event - ĐÃ ĐỔI TÊN THEO QUY TẮC PASCALCASE
+            // Gắn event (đã đổi tên theo quy tắc PascalCase)
             this.Load += FormDrrink_Load;
-            dgvDoUong.CellClick += DgvDoUong_CellClick; // đổi tên
-            btnThem.Click += BtnThem_Click;     // đổi tên (nút CHỈNH SỬA)
-            btnXoa.Click += BtnXoa_Click;       // đổi tên (nút XÓA)
-            btnQuayVe.Click += BtnQuayVe_Click; // tên này đã đúng
+            dgvDoUong.CellClick += DgvDoUong_CellClick;
+            btnThem.Click += BtnThem_Click;     // Nút "Chỉnh sửa"
+            btnXoa.Click += BtnXoa_Click;       // Nút "Xóa"
+            btnQuayVe.Click += BtnQuayVe_Click;
         }
 
         // ====== LOAD DỮ LIỆU LÊN GRID ADMIN ======
@@ -51,31 +51,25 @@ namespace Quan_Li_Tiem_Net.Admin
         }
 
         // ====== CLICK VÀO GRID -> ĐỔ LÊN TEXTBOX ======
-        // Đã đổi tên hàm
         private void DgvDoUong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int idrow = e.RowIndex;
             if (idrow < 0) return;
 
-            // **CÁCH VIẾT KHÁC (1):**
-            // Dùng Convert.ToString() thay vì .Value?.ToString()
-            // Cách này cũng an toàn, xử lý null tốt và có thể "làm mới" lỗi của IDE
+            // Dùng Convert.ToString() để lấy giá trị an toàn
             string ma = Convert.ToString(dgvDoUong.Rows[idrow].Cells["MaDoUong"].Value);
 
             txtMaDoUong.Text = ma;
             txtTenDoUong.Text = Convert.ToString(dgvDoUong.Rows[idrow].Cells["TenDoUong"].Value);
             txtGiaTien.Text = Convert.ToString(dgvDoUong.Rows[idrow].Cells["GiaTien"].Value);
 
-            // **CÁCH VIẾT KHÁC (2):**
-            // Lưu mã đang chọn vào biến riêng, không phụ thuộc vào .Text của textbox
+            // Lưu mã đang chọn vào biến riêng
             _selectedMaDoUong = ma;
         }
 
         // ====== NÚT CHỈNH SỬA ======
-        // Đã đổi tên hàm
         private void BtnThem_Click(object sender, EventArgs e)
         {
-            // **CÁCH VIẾT KHÁC (2) - Áp dụng:**
             // Kiểm tra biến riêng thay vì textbox
             if (string.IsNullOrWhiteSpace(_selectedMaDoUong))
             {
@@ -86,7 +80,6 @@ namespace Quan_Li_Tiem_Net.Admin
 
             using (databaseDataContext db = new databaseDataContext())
             {
-                // Tìm bằng biến riêng
                 DoUong douong = db.DoUongs.SingleOrDefault(p => p.MaDoUong == _selectedMaDoUong);
 
                 if (douong == null)
@@ -99,22 +92,20 @@ namespace Quan_Li_Tiem_Net.Admin
                 // Cập nhật tên
                 douong.TenDoUong = txtTenDoUong.Text.Trim();
 
-                // **CÁCH VIẾT KHÁC (3):**
-                // Tách biệt việc khai báo và gán giá trị 'gia'
-                // Đây là dòng 79-86 của bạn, được viết lại một chút
+                // Cập nhật giá
                 decimal gia; // 1. Khai báo
-                if (!decimal.TryParse(txtGiaTien.Text, out gia)) // 2. Gán
+                if (!decimal.TryParse(txtGiaTien.Text, out gia)) // 2. Parse text sang decimal
                 {
                     MessageBox.Show("Giá tiền không hợp lệ", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                douong.GiaTien = gia.ToString(); ; // 3. Sử dụng
+                douong.GiaTien = gia.ToString(); // 3. Gán (string) vào CSDL (vốn là string)
 
                 db.SubmitChanges();
             }
 
-            // Logic quan trọng giữ nguyên:
+            // Logic quan trọng: Reload lại cả 2 form
             LoadDuLieu();
             _userForm?.ReloadData();
 
@@ -123,11 +114,9 @@ namespace Quan_Li_Tiem_Net.Admin
         }
 
         // ====== NÚT XÓA ======
-        // Đã đổi tên hàm
         private void BtnXoa_Click(object sender, EventArgs e)
         {
-            // **CÁCH VIẾT KHÁC (2) - Áp dụng:**
-            // Kiểm tra biến riêng thay vì textbox
+            // Kiểm tra biến riêng
             if (string.IsNullOrWhiteSpace(_selectedMaDoUong))
             {
                 MessageBox.Show("Vui lòng chọn đồ uống cần xóa", "Thông báo",
@@ -143,7 +132,6 @@ namespace Quan_Li_Tiem_Net.Admin
 
             using (databaseDataContext db = new databaseDataContext())
             {
-                // Tìm bằng biến riêng
                 DoUong douong = db.DoUongs.SingleOrDefault(p => p.MaDoUong == _selectedMaDoUong);
 
                 if (douong == null)
@@ -154,10 +142,10 @@ namespace Quan_Li_Tiem_Net.Admin
                 }
 
                 db.DoUongs.DeleteOnSubmit(douong);
-                db.SubmitChanges(); // Bạn dùng Context.SubmitChanges() cũng được, cách này cũng vậy
+                db.SubmitChanges();
             }
 
-            // Logic quan trọng giữ nguyên:
+            // Logic quan trọng: Reload lại cả 2 form
             LoadDuLieu();
             _userForm?.ReloadData();
 
