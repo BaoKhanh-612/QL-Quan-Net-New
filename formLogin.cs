@@ -13,6 +13,7 @@ namespace Quan_Li_Tiem_Net
 {
     public partial class formLogin : Form
     {
+        public static string TenDangNhap;
         public formLogin()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Quan_Li_Tiem_Net
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            
+  
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -46,25 +47,26 @@ namespace Quan_Li_Tiem_Net
                 {
                     if (user.MatKhau == password)
                     {
+                        TenDangNhap = user.TenDangNhap;
                         // Đăng nhập thành công
-                    MessageBox.Show("Đăng nhập thành công!");
-                    this.Hide();
+                        MessageBox.Show("Đăng nhập thành công!");
+                        this.Hide();
 
-                if (user.LoaiTaiKhoan == "Admin")
-                {
-                    formAdmin fAdmin = new formAdmin();
-                    fAdmin.ShowDialog();
-                }
-                else // LoaiTaiKhoan == "User"
-                {
-                    formUser fUser = new formUser();
-                    // Truyền tên đăng nhập qua formUser để dùng cho chức năng đổi mật khẩu
-                    fUser.currentUsername = user.TenDangNhap; 
-                    fUser.ShowDialog();
-                }
+                        if (user.LoaiTaiKhoan == "Admin")
+                        {
+                            formAdmin fAdmin = new formAdmin();
+                            fAdmin.ShowDialog();
+                        }
+                        else // LoaiTaiKhoan == "User"
+                        {
+                            formUser fUser = new formUser();
+                            // Truyền tên đăng nhập qua formUser để dùng cho chức năng đổi mật khẩu
+                            fUser.currentUsername = user.TenDangNhap; 
+                            fUser.ShowDialog();
+                        }
                 
-                    // Sau khi form Admin/User đóng, hiển thị lại form Login
-                    this.Show();
+                        // Sau khi form Admin/User đóng, hiển thị lại form Login
+                        this.Show();
                     }
                     else
                     {

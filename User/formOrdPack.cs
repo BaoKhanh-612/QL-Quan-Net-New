@@ -50,67 +50,82 @@ namespace Quan_Li_Tiem_Net
             txtTongTien.Text = tongTien.ToString();
         }
 
+        // SỬA LẠI HÀM NÀY
         private void btnCashP_Click(object sender, EventArgs e)
         {
+            // 1. Lấy tên đăng nhập từ biến static
+            string tenDangNhapHienTai = formLogin.TenDangNhap;
+
+            // 2. Kiểm tra
+            if (string.IsNullOrEmpty(tenDangNhapHienTai))
+            {
+                MessageBox.Show("Lỗi: Không tìm thấy người dùng đăng nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Action logicThanhToan = () =>
             {
-                // CẬP NHẬT: Tính toán tổng tiền và tổng giờ
                 decimal tongTien = 0;
                 decimal tongGioChoi = 0;
 
                 if (decimal.TryParse(txtTongTien.Text, out tongTien))
                 {
-                    // Tinh tong gio
-                    foreach (ListViewItem item in lvHoaDon.Items)
+                    try // Thêm try-catch để bắt lỗi database
                     {
-                        string tenGoi = item.SubItems[1].Text; // "10.000 VND - 1 giờ chơi"
-                        int soLuong = int.Parse(item.SubItems[3].Text);
+                        databaseDataContext db = new databaseDataContext(); // Mở kết nối DB
 
-                        decimal gioChoi = 0;
-                        try
+                        foreach (ListViewItem item in lvHoaDon.Items)
                         {
-                            // Tách chuỗi để lấy số giờ
-                            string[] parts = tenGoi.Split('-');
-                            if (parts.Length > 1)
+                            string tenGoi = item.SubItems[1].Text;
+                            int soLuong = int.Parse(item.SubItems[3].Text);
+
+                            decimal gioChoi = 0;
+                            try
                             {
-                                string gioPart = parts[1].Trim(); // "1 giờ chơi"
-                                string[] gioParts = gioPart.Split(' '); // ["1", "giờ", "chơi"]
-                                if (gioParts.Length > 0)
+                                string[] parts = tenGoi.Split('-');
+                                if (parts.Length > 1)
                                 {
-                                    decimal.TryParse(gioParts[0], out gioChoi);
+                                    string gioPart = parts[1].Trim();
+                                    string[] gioParts = gioPart.Split(' ');
+                                    if (gioParts.Length > 0)
+                                    {
+                                        decimal.TryParse(gioParts[0], out gioChoi);
+                                    }
                                 }
                             }
-                        }
-                        catch (Exception)
-                        {
-                            // Bỏ qua nếu lỗi parsing
-                        }
-                        tongGioChoi += gioChoi * soLuong;
+                            catch (Exception) { }
+                            tongGioChoi += gioChoi * soLuong;
 
-                        // Thêm vào lịch sử mua hàng
-                        PurchaseHistory.Items.Add(new PurchaseHistoryItem
-                        {
-                            Name = item.SubItems[1].Text,
-                            Quantity = int.Parse(item.SubItems[3].Text),
-                            Price = decimal.Parse(item.SubItems[2].Text),
-                            Type = "Gói chơi",
-                            PurchaseDate = DateTime.Now
-                        });
+                            // 3. THAY THẾ PurchaseHistory.Items BẰNG LOGIC DB
+                            LichSuMuaHang newItem = new LichSuMuaHang();
+                            newItem.TenDangNhap = tenDangNhapHienTai; // Dùng tên đăng nhập
+                            newItem.TenSanPham = item.SubItems[1].Text;
+                            newItem.Loai = "Gói chơi";
+                            newItem.SoLuong = int.Parse(item.SubItems[3].Text);
+                            newItem.GiaTien = decimal.Parse(item.SubItems[2].Text);
+                            newItem.NgayMua = DateTime.Now;
+
+                            db.LichSuMuaHangs.InsertOnSubmit(newItem);
+                        }
+
+                        // 4. LƯU VÀO DATABASE
+                        db.SubmitChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi lưu vào lịch sử mua hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Dừng lại nếu lỗi
                     }
                 }
 
-                // CẬP NHẬT: Gọi hàm static của formUser để cập nhật
+                // 5. Code cũ của bạn giữ nguyên
                 formUser.AddPurchase(tongTien, tongGioChoi);
-
-
                 MessageBox.Show("Thanh toán thành công. Đã thêm giờ chơi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show("Nhân viên sẽ đến thu tiền !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 formPack form = new formPack();
                 form.ShowDialog();
-
             };
-        
 
             formConfirmPaymentPack confirmForm = new formConfirmPaymentPack(logicThanhToan);
             confirmForm.ShowDialog();
@@ -123,10 +138,8 @@ namespace Quan_Li_Tiem_Net
 
         private void btnQuayVe_Click(object sender, EventArgs e)
         {
-           
+
             this.Close();
         }
-
-       
     }
 }

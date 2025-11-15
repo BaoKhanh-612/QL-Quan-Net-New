@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLi Tiem Net" Class="databaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7LPD0GBV;Initial Catalog=&quot;QLi Tiem Net&quot;;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Quan_Li_Tiem_Net.Properties.Settings" SettingsPropertyName="QLi_Tiem_NetConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7LPD0GBV;Initial Catalog=&quot;QLi Tiem Net&quot;;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Quan_Li_Tiem_Net.Properties.Settings" SettingsPropertyName="QLi_Tiem_NetConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DoUong" Member="DoUongs">
     <Type Name="DoUong">
       <Column Name="MaDoUong" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenDoUong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GiaTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="DoUong_ListSP" Member="ListSPs" ThisKey="MaDoUong" OtherKey="MaDoUong" Type="ListSP" />
     </Type>
   </Table>
   <Table Name="dbo.GoiChoi" Member="GoiChois">
@@ -13,18 +12,6 @@
       <Column Name="MaGoi" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenGoi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GiaTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="GoiChoi_ListSP" Member="ListSPs" ThisKey="MaGoi" OtherKey="MaMonAn" Type="ListSP" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ListSP" Member="ListSPs">
-    <Type Name="ListSP">
-      <Column Name="[ID San Pham]" Member="ID_San_Pham" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaMonAn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaDoUong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaGoiChoi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="DoUong_ListSP" Member="DoUong" ThisKey="MaDoUong" OtherKey="MaDoUong" Type="DoUong" IsForeignKey="true" />
-      <Association Name="GoiChoi_ListSP" Member="GoiChoi" ThisKey="MaMonAn" OtherKey="MaGoi" Type="GoiChoi" IsForeignKey="true" />
-      <Association Name="MonAn_ListSP" Member="MonAn" ThisKey="MaMonAn" OtherKey="MaMonAn" Type="MonAn" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.MonAn" Member="MonAns">
@@ -32,7 +19,6 @@
       <Column Name="MaMonAn" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenMonAn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GiaTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="MonAn_ListSP" Member="ListSPs" ThisKey="MaMonAn" OtherKey="MaMonAn" Type="ListSP" />
     </Type>
   </Table>
   <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
@@ -40,6 +26,19 @@
       <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="LoaiTaiKhoan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TaiKhoan_LichSuMuaHang" Member="LichSuMuaHangs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="LichSuMuaHang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichSuMuaHang" Member="LichSuMuaHangs">
+    <Type Name="LichSuMuaHang">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NgayMua" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TaiKhoan_LichSuMuaHang" Member="TaiKhoan" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="TaiKhoan" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

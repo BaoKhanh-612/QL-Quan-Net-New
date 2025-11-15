@@ -62,19 +62,53 @@ namespace Quan_Li_Tiem_Net
 
         private void btnCashD_Click_1(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in lvHoaDon.Items)
+            // 1. ĐẶT DÒNG CỦA BẠN Ở ĐÂY
+            string tenDangNhapHienTai = formLogin.TenDangNhap;
+
+            // 2. Kiểm tra
+            if (string.IsNullOrEmpty(tenDangNhapHienTai))
             {
-                PurchaseHistory.Items.Add(new PurchaseHistoryItem
-                {
-                    Name = item.SubItems[1].Text,
-                    Quantity = int.Parse(item.SubItems[3].Text),
-                    Price = decimal.Parse(item.SubItems[2].Text),
-                    Type = "Đồ uống",
-                    PurchaseDate = DateTime.Now
-                });
+                MessageBox.Show("Lỗi: Không tìm thấy người dùng đăng nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            formConfirmPaymentDrink form = new formConfirmPaymentDrink();
+            // 3. Tạo một "Hành động" (Action) để lưu vào database
+            Action saveOrderAction = () =>
+            {
+                try
+                {
+                    databaseDataContext db = new databaseDataContext();
+
+                    // 4. Duyệt qua danh sách và LƯU VÀO DATABASE
+                    foreach (ListViewItem item in lvHoaDon.Items)
+                    {
+                        // Dùng 'LichSuMuaHang' (từ database.designer.cs)
+                        LichSuMuaHang newItem = new LichSuMuaHang();
+                        newItem.TenDangNhap = tenDangNhapHienTai; // Dùng tên đăng nhập
+                        newItem.TenSanPham = item.SubItems[1].Text;
+                        newItem.Loai = "Đồ uống";
+                        newItem.SoLuong = int.Parse(item.SubItems[3].Text);
+                        newItem.GiaTien = decimal.Parse(item.SubItems[2].Text);
+                        newItem.NgayMua = DateTime.Now;
+
+                        db.LichSuMuaHangs.InsertOnSubmit(newItem);
+                    }
+
+                    // 5. Lưu tất cả thay đổi
+                    db.SubmitChanges();
+
+                    MessageBox.Show("Thanh toán thành công! Nhân viên sẽ đến mang đồ uống và thu tiền.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Đóng form Order lại
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lưu vào lịch sử mua hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            };
+
+            // 6. Mở form xác nhận VÀ TRUYỀN HÀNH ĐỘNG vào
+            // (Bạn phải sửa formConfirmPaymentDrink để nhận Action này - xem bên dưới)
+            formConfirmPaymentDrink form = new formConfirmPaymentDrink(saveOrderAction);
             form.ShowDialog();
 
         }

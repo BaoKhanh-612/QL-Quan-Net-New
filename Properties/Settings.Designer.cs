@@ -26,11 +26,22 @@ namespace Quan_Li_Tiem_Net.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7LPD0GBV;Initial Catalog=\"QLi Tiem Net\";Integrated Security=Tr" +
-            "ue;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HACLONG\\SQLEXPRESS;Initial Catalog=\"QLi Tiem Net\";Integrated Security" +
+            "=True;TrustServerCertificate=True")]
         public string QLi_Tiem_NetConnectionString {
             get {
                 return ((string)(this["QLi_Tiem_NetConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7LPD0GBV;Initial Catalog=\"QLi Tiem Net\";Integrated Security=Tr" +
+            "ue;Encrypt=True;TrustServerCertificate=True")]
+        public string QLi_Tiem_NetConnectionString1 {
+            get {
+                return ((string)(this["QLi_Tiem_NetConnectionString1"]));
             }
         }
     }

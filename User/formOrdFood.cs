@@ -51,25 +51,60 @@ namespace Quan_Li_Tiem_Net
 
         private void btnQuayVe_Click(object sender, EventArgs e)
         {
-           
+
             this.Close();
         }
 
+        // SỬA LẠI TOÀN BỘ HÀM NÀY
         private void btnCashF_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in lvHoaDon.Items)
+            // 1. Lấy tên đăng nhập từ biến static của formLogin
+            string tenDangNhapHienTai = formLogin.TenDangNhap;
+
+            // 2. Kiểm tra
+            if (string.IsNullOrEmpty(tenDangNhapHienTai))
             {
-                PurchaseHistory.Items.Add(new PurchaseHistoryItem
-                {
-                    Name = item.SubItems[1].Text,
-                    Quantity = int.Parse(item.SubItems[3].Text),
-                    Price = decimal.Parse(item.SubItems[2].Text),
-                    Type = "Món ăn",
-                    PurchaseDate = DateTime.Now
-                });
+                MessageBox.Show("Lỗi: Không tìm thấy người dùng đăng nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            formConfirmPaymentFood form = new formConfirmPaymentFood();
+            // 3. Tạo "Hành động" (Action) để lưu vào database
+            Action saveOrderAction = () =>
+            {
+                try
+                {
+                    databaseDataContext db = new databaseDataContext();
+
+                    // 4. Duyệt qua danh sách và LƯU VÀO DATABASE
+                    // (thay thế cho PurchaseHistory.Items)
+                    foreach (ListViewItem item in lvHoaDon.Items)
+                    {
+                        // Dùng 'LichSuMuaHang' (từ database.designer.cs)
+                        LichSuMuaHang newItem = new LichSuMuaHang();
+                        newItem.TenDangNhap = tenDangNhapHienTai; // Dùng tên đăng nhập
+                        newItem.TenSanPham = item.SubItems[1].Text; // Tên món
+                        newItem.Loai = "Món ăn";
+                        newItem.SoLuong = int.Parse(item.SubItems[3].Text);
+                        newItem.GiaTien = decimal.Parse(item.SubItems[2].Text);
+                        newItem.NgayMua = DateTime.Now;
+
+                        db.LichSuMuaHangs.InsertOnSubmit(newItem);
+                    }
+
+                    // 5. Lưu tất cả thay đổi
+                    db.SubmitChanges();
+
+                    MessageBox.Show("Thanh toán thành công! Nhân viên sẽ đến mang món và thu tiền.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Đóng form Order lại
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lưu vào lịch sử mua hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            };
+
+            // 6. Mở form xác nhận VÀ TRUYỀN HÀNH ĐỘNG vào
+            formConfirmPaymentFood form = new formConfirmPaymentFood(saveOrderAction);
             form.ShowDialog();
         }
 
