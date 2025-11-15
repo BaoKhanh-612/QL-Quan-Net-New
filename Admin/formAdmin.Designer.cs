@@ -39,6 +39,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.danhMụcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đồUốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.góiChơiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -136,7 +137,8 @@
             // danhMụcToolStripMenuItem
             // 
             this.danhMụcToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đồUốngToolStripMenuItem});
+            this.đồUốngToolStripMenuItem,
+            this.góiChơiToolStripMenuItem});
             this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
             this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
             this.danhMụcToolStripMenuItem.Text = "Danh mục";
@@ -147,6 +149,13 @@
             this.đồUốngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đồUốngToolStripMenuItem.Text = "Đồ uống";
             this.đồUốngToolStripMenuItem.Click += new System.EventHandler(this.đồUốngToolStripMenuItem_Click);
+            // 
+            // góiChơiToolStripMenuItem
+            // 
+            this.góiChơiToolStripMenuItem.Name = "góiChơiToolStripMenuItem";
+            this.góiChơiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.góiChơiToolStripMenuItem.Text = "Gói chơi";
+            this.góiChơiToolStripMenuItem.Click += new System.EventHandler(this.góiChơiToolStripMenuItem_Click);
             // 
             // formAdmin
             // 
@@ -181,5 +190,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem danhMụcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đồUốngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem góiChơiToolStripMenuItem;
     }
 }

@@ -42,6 +42,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThemMoi = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.lblTenDoUong = new System.Windows.Forms.Label();
             this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,6 +147,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnThemMoi);
             this.panel2.Controls.Add(this.listView1);
             this.panel2.Controls.Add(this.txtGiaTien);
             this.panel2.Controls.Add(this.txtTenDoUong);
@@ -160,6 +162,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(775, 566);
             this.panel2.TabIndex = 8;
+            // 
+            // btnThemMoi
+            // 
+            this.btnThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemMoi.Location = new System.Drawing.Point(54, 505);
+            this.btnThemMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemMoi.Name = "btnThemMoi";
+            this.btnThemMoi.Size = new System.Drawing.Size(146, 42);
+            this.btnThemMoi.TabIndex = 11;
+            this.btnThemMoi.Text = "Thêm";
+            this.btnThemMoi.UseVisualStyleBackColor = true;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // listView1
             // 
@@ -304,7 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1757, 702);
+            this.ClientSize = new System.Drawing.Size(1633, 721);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -345,5 +359,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnQuayVe;
+        private System.Windows.Forms.Button btnThemMoi;
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="Admin\FormDrrink.Designer.cs">
       <DependentUpon>FormDrrink.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Formgoichoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Formgoichoi.Designer.cs">
+      <DependentUpon>Formgoichoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="database.cs">
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Formgoichoi.resx">
+      <DependentUpon>Formgoichoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formConfirmPaymentPack.resx">
       <DependentUpon>formConfirmPaymentPack.cs</DependentUpon>

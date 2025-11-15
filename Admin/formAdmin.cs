@@ -36,5 +36,23 @@ namespace Quan_Li_Tiem_Net
             // Sau khi form Đồ uống đóng, hiện lại form Admin
             this.Show();
         }
+
+        private void góiChơiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Tạm ẩn form Admin
+            this.Hide();
+
+            // 1. TÌM formPack (của User) đang mở trong ứng dụng
+            formPack userFormInstance = Application.OpenForms.OfType<formPack>().FirstOrDefault();
+
+            // 2. TRUYỀN thể hiện userFormInstance vào Formgoichoi (của Admin)
+            // (Hãy chắc chắn bạn đã có "using Quan_Li_Tiem_Net.Admin;" ở đầu file)
+            Formgoichoi fGoi = new Formgoichoi(userFormInstance);
+
+            fGoi.ShowDialog();
+
+            // Sau khi form Gói chơi đóng, hiện lại form Admin
+            this.Show();
+        }
     }
 }
