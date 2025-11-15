@@ -138,18 +138,21 @@
             this.themmonToolStripMenuItem.Name = "themmonToolStripMenuItem";
             this.themmonToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.themmonToolStripMenuItem.Text = "thêm món";
+            this.themmonToolStripMenuItem.Click += new System.EventHandler(this.themmonToolStripMenuItem_Click);
             // 
             // datmonToolStripMenuItem
             // 
             this.datmonToolStripMenuItem.Name = "datmonToolStripMenuItem";
             this.datmonToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.datmonToolStripMenuItem.Text = "thêm đồ uống";
+            this.datmonToolStripMenuItem.Click += new System.EventHandler(this.datmonToolStripMenuItem_Click);
             // 
             // lịchSửMuaToolStripMenuItem
             // 
             this.lịchSửMuaToolStripMenuItem.Name = "lịchSửMuaToolStripMenuItem";
             this.lịchSửMuaToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.lịchSửMuaToolStripMenuItem.Text = "thêm gói chơi";
+            this.lịchSửMuaToolStripMenuItem.Click += new System.EventHandler(this.lịchSửMuaToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 

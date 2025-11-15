@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLi Tiem Net" Class="databaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7LPD0GBV;Initial Catalog=&quot;QLi Tiem Net&quot;;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Quan_Li_Tiem_Net.Properties.Settings" SettingsPropertyName="QLi_Tiem_NetConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7LPD0GBV;Initial Catalog=&quot;QLi Tiem Net&quot;;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Quan_Li_Tiem_Net.Properties.Settings" SettingsPropertyName="QLi_Tiem_NetConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DoUong" Member="DoUongs">
     <Type Name="DoUong">
       <Column Name="MaDoUong" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
