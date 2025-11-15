@@ -166,8 +166,8 @@ namespace Quan_Li_Tiem_Net
 
         private void lịchSửMuaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            formLichSuMua form = new formLichSuMua();
-            form.ShowDialog(this);
+            formLichSuMua frm = new formLichSuMua(currentUsername);
+            frm.ShowDialog();
         }
 
         private void cấuHìnhMáyToolStripMenuItem_Click(object sender, EventArgs e)

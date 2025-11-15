@@ -34,12 +34,13 @@
             // 
             // lvLichSuMua
             // 
+            this.lvLichSuMua.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvLichSuMua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvLichSuMua.GridLines = true;
             this.lvLichSuMua.HideSelection = false;
-            this.lvLichSuMua.Location = new System.Drawing.Point(12, 70);
+            this.lvLichSuMua.Location = new System.Drawing.Point(0, 82);
             this.lvLichSuMua.Name = "lvLichSuMua";
-            this.lvLichSuMua.Size = new System.Drawing.Size(705, 444);
+            this.lvLichSuMua.Size = new System.Drawing.Size(768, 444);
             this.lvLichSuMua.TabIndex = 0;
             this.lvLichSuMua.UseCompatibleStateImageBehavior = false;
             this.lvLichSuMua.View = System.Windows.Forms.View.List;
@@ -48,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("UTM Banque", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(176, 9);
+            this.label1.Location = new System.Drawing.Point(197, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 50);
             this.label1.TabIndex = 1;
@@ -58,9 +59,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 526);
+            this.ClientSize = new System.Drawing.Size(768, 526);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lvLichSuMua);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "formLichSuMua";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formLichSuMua";
