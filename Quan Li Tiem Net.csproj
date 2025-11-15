@@ -80,6 +80,12 @@
     <Compile Include="Admin\formAdmin.Designer.cs">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLichSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLichSu.Designer.cs">
+      <DependentUpon>frmLichSu.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User\formChangePassUser.cs">
       <SubType>Form</SubType>
@@ -183,6 +189,7 @@
     <EmbeddedResource Include="Admin\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportLichSu.rdlc" />
     <EmbeddedResource Include="User\formChangePassUser.resx">
       <DependentUpon>formChangePassUser.cs</DependentUpon>
     </EmbeddedResource>
