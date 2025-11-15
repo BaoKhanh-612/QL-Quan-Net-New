@@ -23,58 +23,58 @@ namespace Quan_Li_Tiem_Net
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (username == null || password == null)
+            
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.");
                 return;
             }
-            else
-            {
-                if (username == "admin" && password == "123")
+
+            try
+            {   
+                databaseDataContext db = new databaseDataContext();
+
+                // 1. Kiểm tra tài khoản tồn tại (ko PHÂN BIỆT hoa thường)
+                var user = db.TaiKhoans.SingleOrDefault(u => u.TenDangNhap == username);
+
+                if (user == null)
                 {
-                    MessageBox.Show("Xin chao Admin", "Thong bao ", MessageBoxButtons.OK);
-                    formAdmin fAdmin = new formAdmin();
-                    this.Hide();
-                    DialogResult result = fAdmin.ShowDialog();
-
-                    // Nếu Admin đăng xuất, đóng form Login để quay về form Main
-                    if (result == DialogResult.OK)
-                    {
-                        this.Close();
-                        return;
-                    }
-
-                    // Sau khi form Admin đóng, hiện lại form Login và xóa dữ liệu
-                    txtUsername.Clear();
-                    txtPassword.Clear();
-                    txtUsername.Focus();
-                    this.Show();
-                }
-                else if (username == "user" && password == "123")
-                {
-                    MessageBox.Show("Xin chao User", "Thong bao ", MessageBoxButtons.OK);
-                    formUser fUser = new formUser();
-                    this.Hide();
-                    DialogResult result = fUser.ShowDialog();
-
-                    // Nếu User đăng xuất, đóng form Login để quay về form Main
-                    if (result == DialogResult.OK)
-                    {
-                        this.Close();
-                        return;
-                    }
-
-                    // Sau khi form User đóng, hiện lại form Login và xóa dữ liệu
-                    txtUsername.Clear();
-                    txtPassword.Clear();
-                    txtUsername.Focus();
-                    this.Show();
+                    MessageBox.Show("Tài khoản không tồn tại!");
                 }
                 else
                 {
-                    MessageBox.Show("Sai thong tin dang nhap, Vui long nhap lai", "Thong bao ", MessageBoxButtons.OK);
-                    txtUsername.Focus();
+                    if (user.MatKhau == password)
+                    {
+                        // Đăng nhập thành công
+                    MessageBox.Show("Đăng nhập thành công!");
+                    this.Hide();
+
+                if (user.LoaiTaiKhoan == "Admin")
+                {
+                    formAdmin fAdmin = new formAdmin();
+                    fAdmin.ShowDialog();
                 }
+                else // LoaiTaiKhoan == "User"
+                {
+                    formUser fUser = new formUser();
+                    // Truyền tên đăng nhập qua formUser để dùng cho chức năng đổi mật khẩu
+                    fUser.currentUsername = user.TenDangNhap; 
+                    fUser.ShowDialog();
+                }
+                
+                    // Sau khi form Admin/User đóng, hiển thị lại form Login
+                    this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai mật khẩu!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi đăng nhập: " + ex.Message);
             }
         }
 

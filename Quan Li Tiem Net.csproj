@@ -62,6 +62,12 @@
     <Compile Include="formAdmin.Designer.cs">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\formChangePassUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formChangePassUser.Designer.cs">
+      <DependentUpon>formChangePassUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\formConfirmPaymentPack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formChangePassUser.resx">
+      <DependentUpon>formChangePassUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formConfirmPaymentPack.resx">
       <DependentUpon>formConfirmPaymentPack.cs</DependentUpon>

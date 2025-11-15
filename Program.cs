@@ -16,7 +16,8 @@ namespace Quan_Li_Tiem_Net
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formAdmin());
+            Application.Run(new formMain());
+            
         }
     }
 }

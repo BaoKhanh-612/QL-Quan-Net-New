@@ -20,14 +20,14 @@
         <elementListCompartment Id="4bcd6d13-a68f-4765-acc7-d11a181d0650" absoluteBounds="2.265, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.125 : 3.44314697265625); (5.27083583333333 : 3.44314697265625 : JumpStart); (5.10416916666667 : 3.44314697265625 : JumpEnd); (4.25 : 3.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.125 : 3.44314697265625); (4.83333583333333 : 3.44314697265625 : JumpStart); (4.66666916666667 : 3.44314697265625 : JumpEnd); (4.25 : 3.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/databaseDataContext/DoUong/DoUong_ListSP" />
       <nodes>
         <classShapeMoniker Id="d9f2056f-c0e1-4eb0-95f6-1f4ded6e0a4e" />
         <classShapeMoniker Id="372d67aa-c567-4024-b8b5-11c9fe3320fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.1875025 : 1.8862939453125); (5.1875025 : 4.10462367513021); (4.25 : 4.10462367513021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.7500025 : 1.8862939453125); (4.7500025 : 4.03407598632812); (4.25 : 4.03407598632812)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/databaseDataContext/GoiChoi/GoiChoi_ListSP" />
       <nodes>
         <classShapeMoniker Id="465e89ea-8e4a-4f54-bf52-fa4c40922ca9" />
@@ -47,5 +47,11 @@
         <classShapeMoniker Id="372d67aa-c567-4024-b8b5-11c9fe3320fa" />
       </nodes>
     </associationConnector>
+    <classShape Id="5e39d1c5-24bc-4cb2-8c5e-7b58547a78ec" absoluteBounds="5.25, 4.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/databaseDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ce0479f-f0c1-4f55-bee3-c50342f4067b" absoluteBounds="5.265, 5.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

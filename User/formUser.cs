@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,9 @@ namespace Quan_Li_Tiem_Net
 {
     public partial class formUser : Form
     {
+        // 1. Biến này PHẢI được gán giá trị từ formLogin
+        public string currentUsername;
+
         // THÊM MỚI: Biến theo dõi tổng số tiền/thời gian ĐÃ TỪNG NẠP
         // Dùng để tính tỷ giá trung bình
         public static decimal TotalMoneyEverDeposited = 0;
@@ -142,8 +146,11 @@ namespace Quan_Li_Tiem_Net
                 gameTimer.Stop();
                 gameTimer.Dispose();
             }
-             this.DialogResult = DialogResult.OK; // Thông báo đăng xuất
-             
+            
+            this.Hide();
+            formMain form = new formMain();
+            form.ShowDialog();
+
         }
 
         private void góiGiờChơiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,7 +172,6 @@ namespace Quan_Li_Tiem_Net
 
         private void cấuHìnhMáyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             formPCprop form = new formPCprop();
             form.ShowDialog();
         }
@@ -185,6 +191,16 @@ namespace Quan_Li_Tiem_Net
             this.Hide();
             formDrink form = new formDrink();
             form.ShowDialog();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Tạo instance của formChangePassUser
+            // và truyền tên đăng nhập hiện tại (_currentUsername) vào
+            formChangePassUser fChangePass = new formChangePassUser(this.currentUsername);
+
+            // Hiển thị form
+            fChangePass.ShowDialog();
         }
     }
 }
