@@ -48,6 +48,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\FormDrrink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FormDrrink.Designer.cs">
+      <DependentUpon>FormDrrink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Formfood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Formfood.Designer.cs">
+      <DependentUpon>Formfood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Formgoichoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Formgoichoi.Designer.cs">
+      <DependentUpon>Formgoichoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="database.cs">
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
@@ -163,6 +181,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FormDrrink.resx">
+      <DependentUpon>FormDrrink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Formfood.resx">
+      <DependentUpon>Formfood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Formgoichoi.resx">
+      <DependentUpon>Formgoichoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formChangePassUser.resx">
       <DependentUpon>formChangePassUser.cs</DependentUpon>

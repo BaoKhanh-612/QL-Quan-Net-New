@@ -77,7 +77,13 @@ namespace Quan_Li_Tiem_Net
             if (db.GoiChois.ToList().Count > 0)
                 hienthiDuLieuDong(0);
         }
-
+        // ====== THÊM HÀM NÀY VÀO ======
+        // Hàm này để form Admin (Formgoichoi) có thể gọi
+        public void ReloadData()
+        {
+            loadDuLieu(); // Gọi lại hàm tải dữ liệu
+        }
+        // ====== KẾT THÚC THÊM ======
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMaGoi.Text))
@@ -149,13 +155,13 @@ namespace Quan_Li_Tiem_Net
             }
             else
             {
-                
+
                 formOrdPack form = new formOrdPack(lvGoiChoi.Items);
                 form.ShowDialog();
             }
-            
+
         }
 
-        
+
     }
 }

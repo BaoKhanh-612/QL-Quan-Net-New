@@ -22,12 +22,16 @@ namespace Quan_Li_Tiem_Net
 
         private void formFood_Load(object sender, EventArgs e)
         {
-            loadDuLieu();
+            ReloadData();   // dùng hàm public mới
             if (!isListViewSetup)
             {
                 SetupListView();
                 isListViewSetup = true;
             }
+        }
+        public void ReloadData()
+        {
+            loadDuLieu();   // gọi hàm cũ
         }
 
         private void SetupListView()
