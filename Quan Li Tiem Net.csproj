@@ -56,10 +56,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="formAdmin.cs">
+    <Compile Include="Admin\formAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAdmin.Designer.cs">
+    <Compile Include="Admin\formAdmin.Designer.cs">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="User\formChangePassUser.cs">
@@ -161,7 +161,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formAdmin.resx">
+    <EmbeddedResource Include="Admin\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formChangePassUser.resx">
