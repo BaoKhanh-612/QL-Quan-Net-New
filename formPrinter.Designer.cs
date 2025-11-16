@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(715, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "formPrinter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formPrinter";
             this.Load += new System.EventHandler(this.formPrinter_Load);
             this.ResumeLayout(false);
