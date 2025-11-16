@@ -119,5 +119,16 @@ namespace Quan_Li_Tiem_Net
             // Sau khi form Đồ ăn đóng, hiện lại form Admin
             this.Show();
         }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 2. Tạo một đối tượng (instance) mới của FormThongKe
+            FormThongKe fThongKe = new FormThongKe();
+
+            // 3. Hiển thị form đó
+            // (Dùng ShowDialog() để nó ưu tiên hiển thị, không cho bấm
+            //  vào form Admin khi form Thống kê đang mở)
+            fThongKe.ShowDialog();
+        }
     }
 }

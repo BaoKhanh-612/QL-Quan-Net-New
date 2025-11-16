@@ -312,7 +312,7 @@
             this.btnQuayVe.TabIndex = 11;
             this.btnQuayVe.Text = "⬅️ QUAY VỀ";
             this.btnQuayVe.UseVisualStyleBackColor = false;
-     
+
             // 
             // pictureBox1
             // 
