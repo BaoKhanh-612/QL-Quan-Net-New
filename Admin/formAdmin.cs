@@ -54,6 +54,56 @@ namespace Quan_Li_Tiem_Net
             this.Show();
         }
 
+
+
+        private void QLUSER_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            // Khởi tạo và hiển thị form tạo tài khoản
+            formTaoTaiKhoan fTaoTK = new formTaoTaiKhoan();
+            fTaoTK.ShowDialog();
+
+            // Hiển thị lại form Admin sau khi form tạo tài khoản đóng
+            this.Show();
+        }
+
+
+
+
+
+        private void đăngXuấtToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?",
+                                      "Xác nhận",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                // 1. Đóng form Admin hiện tại
+                this.Close();
+
+                // 2. Mở lại form Login
+                // Lưu ý: Bạn cần tìm formLogin đang chạy hoặc tạo mới
+                // Giả sử formLogin của bạn tên là "formLogin"
+
+                // Cách 1: Nếu bạn đã ẩn formLogin khi mở formAdmin
+                // (Tìm form Login đã bị ẩn và hiện nó lên)
+                formLogin loginForm = Application.OpenForms.OfType<formLogin>().FirstOrDefault();
+                if (loginForm != null)
+                {
+                    loginForm.Show();
+                }
+                else
+                {
+                    // Cách 2: Nếu formLogin đã bị đóng, tạo một form mới
+                    formLogin newLoginForm = new formLogin();
+                    newLoginForm.Show();
+                }
+            }
+        }
+
         private void themmonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -69,7 +119,5 @@ namespace Quan_Li_Tiem_Net
             // Sau khi form Đồ ăn đóng, hiện lại form Admin
             this.Show();
         }
-
-        
     }
 }

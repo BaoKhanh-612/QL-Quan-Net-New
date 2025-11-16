@@ -141,16 +141,28 @@ namespace Quan_Li_Tiem_Net
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (gameTimer != null)
-            {
-                gameTimer.Stop();
-                gameTimer.Dispose();
-            }
-            
-            this.Hide();
-            formMain form = new formMain();
-            form.ShowDialog();
+            // 1. Hiển thị hộp thoại xác nhận
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?",
+                                              "Xác nhận",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Question);
 
+            // 2. Chỉ chạy code cũ nếu người dùng chọn "Yes"
+            if (dr == DialogResult.Yes)
+            {
+                // --- Bắt đầu code gốc của bạn ---
+                if (gameTimer != null)
+                {
+                    gameTimer.Stop();
+                    gameTimer.Dispose();
+                }
+
+                this.Hide();
+                formMain form = new formMain();
+                form.ShowDialog();
+                // --- Kết thúc code gốc của bạn ---
+            }
+            // Nếu người dùng chọn "No", không làm gì cả.
         }
 
         private void góiGiờChơiToolStripMenuItem_Click(object sender, EventArgs e)

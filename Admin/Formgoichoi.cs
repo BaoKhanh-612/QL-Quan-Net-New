@@ -23,8 +23,8 @@ namespace Quan_Li_Tiem_Net.Admin
             dgvGoi.CellClick += DgvGoiChoi_CellClick;
 
             // 3 Nút chức năng
-            button1.Click += button1_Click;     // Nút "Thêm"
-            btnThem.Click += BtnThem_Click;     // Nút "Chỉnh sửa"
+            Btnthem.Click += button1_Click;     // Nút "Thêm"
+            btnSua.Click += BtnThem_Click;     // Nút "Chỉnh sửa"
             btnXoa.Click += BtnXoa_Click;       // Nút "Xóa"
 
             btnQuayVe.Click += BtnQuayVe_Click;
@@ -44,8 +44,8 @@ namespace Quan_Li_Tiem_Net.Admin
             txtMaGoi.Focus();
 
             // Bật/tắt các nút
-            button1.Enabled = true;     // Bật nút "Thêm"
-            btnThem.Enabled = false;    // Tắt nút "Chỉnh sửa"
+            Btnthem.Enabled = true;     // Bật nút "Thêm"
+            btnSua.Enabled = false;    // Tắt nút "Chỉnh sửa"
             btnXoa.Enabled = false;     // Tắt nút "Xóa"
         }
 
@@ -55,8 +55,8 @@ namespace Quan_Li_Tiem_Net.Admin
             txtMaGoi.ReadOnly = true; // KHÓA MÃ LẠI
 
             // Bật/tắt các nút
-            button1.Enabled = true;    // Tắt nút "Thêm"
-            btnThem.Enabled = true;     // Bật nút "Chỉnh sửa"
+            Btnthem.Enabled = true;    // Tắt nút "Thêm"
+            btnSua.Enabled = true;     // Bật nút "Chỉnh sửa"
             btnXoa.Enabled = true;      // Bật nút "Xóa"
         }
 
@@ -236,14 +236,6 @@ namespace Quan_Li_Tiem_Net.Admin
             this.Close();
         }
 
-        private void txtMaGoi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenGoi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

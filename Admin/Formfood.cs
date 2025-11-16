@@ -26,7 +26,7 @@ namespace Quan_Li_Tiem_Net.Admin
             // Nút "Thêm mới" của bạn tên là "btnThem"
             // Nút "Chỉnh sửa" của bạn tên là "button1"
             btnThem.Click += btnThemMoi_Click; // Nút "Thêm mới" (tên btnThem, gọi hàm ThemMoi)
-            button1.Click += BtnSua_Click;     // Nút "Chỉnh sửa" (tên button1, gọi hàm Sua)
+            btnsua.Click += BtnSua_Click;     // Nút "Chỉnh sửa" (tên button1, gọi hàm Sua)
             btnXoa.Click += BtnXoa_Click;      // Nút "Xóa"
 
             btnQuayVe.Click += BtnQuayVe_Click;
@@ -47,7 +47,7 @@ namespace Quan_Li_Tiem_Net.Admin
 
             // SỬA Ở ĐÂY: Đổi tên nút
             btnThem.Enabled = true;     // Bật nút "Thêm mới" (tên btnThem)
-            button1.Enabled = false;    // Tắt nút "Chỉnh sửa" (tên button1)
+            btnsua.Enabled = false;    // Tắt nút "Chỉnh sửa" (tên button1)
             btnXoa.Enabled = false;     // Tắt nút "Xóa"
         }
 
@@ -58,7 +58,7 @@ namespace Quan_Li_Tiem_Net.Admin
 
             // SỬA Ở ĐÂY: Đổi tên nút
             btnThem.Enabled = true;    // Tắt nút "Thêm mới" (tên btnThem)
-            button1.Enabled = true;     // Bật nút "Chỉnh sửa" (tên button1)
+            btnsua.Enabled = true;     // Bật nút "Chỉnh sửa" (tên button1)
             btnXoa.Enabled = true;      // Bật nút "Xóa"
         }
 

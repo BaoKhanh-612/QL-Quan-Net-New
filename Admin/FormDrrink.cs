@@ -240,6 +240,6 @@ namespace Quan_Li_Tiem_Net.Admin
             this.Close();
         }
 
-        
+
     }
 }
