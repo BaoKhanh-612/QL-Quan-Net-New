@@ -178,6 +178,7 @@ namespace Quan_Li_Tiem_Net
 
         private void formUser_Load(object sender, EventArgs e)
         {
+            lblTenNguoiDung.Text = currentUsername;
             timer2.Enabled = true;
         }
 

@@ -217,17 +217,17 @@
             // 
             this.lblTenNguoiDung.AutoSize = true;
             this.lblTenNguoiDung.Font = new System.Drawing.Font("UTM Banque", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenNguoiDung.Location = new System.Drawing.Point(168, 199);
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(160, 208);
             this.lblTenNguoiDung.Name = "lblTenNguoiDung";
-            this.lblTenNguoiDung.Size = new System.Drawing.Size(87, 29);
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(101, 29);
             this.lblTenNguoiDung.TabIndex = 4;
-            this.lblTenNguoiDung.Text = "USER";
+            this.lblTenNguoiDung.Text = "Tên tk ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("UTM Banque", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 249);
+            this.label2.Location = new System.Drawing.Point(62, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 20);
             this.label2.TabIndex = 5;
@@ -239,7 +239,7 @@
             this.lblGioChoi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblGioChoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGioChoi.ForeColor = System.Drawing.Color.Black;
-            this.lblGioChoi.Location = new System.Drawing.Point(199, 244);
+            this.lblGioChoi.Location = new System.Drawing.Point(199, 261);
             this.lblGioChoi.Name = "lblGioChoi";
             this.lblGioChoi.Size = new System.Drawing.Size(142, 31);
             this.lblGioChoi.TabIndex = 5;
@@ -250,7 +250,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("UTM Banque", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 291);
+            this.label3.Location = new System.Drawing.Point(57, 308);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 7;
@@ -274,7 +274,7 @@
             this.groupBox1.Size = new System.Drawing.Size(411, 556);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "THÔNG TIN USER";
+            this.groupBox1.Text = "THÔNG TIN TÀI KHOẢN";
             // 
             // lblSoTienNap
             // 
@@ -282,7 +282,7 @@
             this.lblSoTienNap.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblSoTienNap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoTienNap.ForeColor = System.Drawing.Color.Black;
-            this.lblSoTienNap.Location = new System.Drawing.Point(199, 286);
+            this.lblSoTienNap.Location = new System.Drawing.Point(199, 303);
             this.lblSoTienNap.Name = "lblSoTienNap";
             this.lblSoTienNap.Size = new System.Drawing.Size(142, 31);
             this.lblSoTienNap.TabIndex = 8;
