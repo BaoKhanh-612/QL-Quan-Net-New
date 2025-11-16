@@ -69,5 +69,7 @@ namespace Quan_Li_Tiem_Net
             // Sau khi form Đồ ăn đóng, hiện lại form Admin
             this.Show();
         }
+
+        
     }
 }

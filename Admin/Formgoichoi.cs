@@ -55,7 +55,7 @@ namespace Quan_Li_Tiem_Net.Admin
             txtMaGoi.ReadOnly = true; // KHÓA MÃ LẠI
 
             // Bật/tắt các nút
-            button1.Enabled = false;    // Tắt nút "Thêm"
+            button1.Enabled = true;    // Tắt nút "Thêm"
             btnThem.Enabled = true;     // Bật nút "Chỉnh sửa"
             btnXoa.Enabled = true;      // Bật nút "Xóa"
         }
