@@ -206,9 +206,21 @@ namespace Quan_Li_Tiem_Net
 
         private void inHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formPrinter form = new formPrinter();
-            form.Show();
+            // 1. Tạo và mở form chọn loại
+            formChonLoaiIn formChon = new formChonLoaiIn();
 
+            // 2. Chỉ khi người dùng bấm "Đồng ý" (OK)
+            if (formChon.ShowDialog() == DialogResult.OK)
+            {
+                // 3. Lấy loại đã được chọn
+                string loaiDuocChon = formChon.LoaiDuocChon;
+
+                // 4. Mở formPrinter và CHỈ TRUYỀN loại được chọn
+                //    (formPrinter sẽ tự lấy tên đăng nhập)
+                formPrinter form = new formPrinter(loaiDuocChon);
+                form.Show();
+            }
+            // Nếu người dùng bấm "Hủy bỏ", không làm gì cả.
         }
     }
 }

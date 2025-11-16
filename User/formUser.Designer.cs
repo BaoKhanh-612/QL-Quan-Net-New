@@ -217,11 +217,11 @@
             // 
             this.lblTenNguoiDung.AutoSize = true;
             this.lblTenNguoiDung.Font = new System.Drawing.Font("UTM Banque", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenNguoiDung.Location = new System.Drawing.Point(160, 208);
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(169, 208);
             this.lblTenNguoiDung.Name = "lblTenNguoiDung";
-            this.lblTenNguoiDung.Size = new System.Drawing.Size(101, 29);
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(97, 29);
             this.lblTenNguoiDung.TabIndex = 4;
-            this.lblTenNguoiDung.Text = "Tên tk ";
+            this.lblTenNguoiDung.Text = "tên tk ";
             // 
             // label2
             // 
