@@ -47,7 +47,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.label1 = new System.Windows.Forms.Label();
+            this.inHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblGioChoi = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.inHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -206,15 +206,22 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(199, 6);
             // 
-            // label1
+            // inHóaĐơnToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("UTM Banque", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(168, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "USER";
+            this.inHóaĐơnToolStripMenuItem.Name = "inHóaĐơnToolStripMenuItem";
+            this.inHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.inHóaĐơnToolStripMenuItem.Text = "in hóa đơn";
+            this.inHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.inHóaĐơnToolStripMenuItem_Click);
+            // 
+            // lblTenNguoiDung
+            // 
+            this.lblTenNguoiDung.AutoSize = true;
+            this.lblTenNguoiDung.Font = new System.Drawing.Font("UTM Banque", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(168, 199);
+            this.lblTenNguoiDung.Name = "lblTenNguoiDung";
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(87, 29);
+            this.lblTenNguoiDung.TabIndex = 4;
+            this.lblTenNguoiDung.Text = "USER";
             // 
             // label2
             // 
@@ -253,7 +260,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Indigo;
             this.groupBox1.Controls.Add(this.lblSoTienNap);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblTenNguoiDung);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -305,13 +312,6 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // inHóaĐơnToolStripMenuItem
-            // 
-            this.inHóaĐơnToolStripMenuItem.Name = "inHóaĐơnToolStripMenuItem";
-            this.inHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.inHóaĐơnToolStripMenuItem.Text = "in hóa đơn";
-            this.inHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.inHóaĐơnToolStripMenuItem_Click);
-            // 
             // formUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +345,7 @@
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTenNguoiDung;
         private System.Windows.Forms.ToolStripMenuItem danhMụcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mónĂnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem góiGiờChơiToolStripMenuItem;

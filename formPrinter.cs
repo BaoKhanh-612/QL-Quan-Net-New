@@ -23,7 +23,7 @@ namespace Quan_Li_Tiem_Net
             //truyen du lieu vao report
 
             ReportParameter[] para = new ReportParameter[1];
-            para[0] = new ReportParameter("nguoidung","User");
+            para[0] = new ReportParameter("nguoidung", formLogin.TenDangNhap);
             this.reportViewer1.LocalReport.SetParameters(para); //nap du lieu report
             this.reportViewer1.LocalReport.DataSources.Clear();
             databaseDataContext db = new databaseDataContext();
