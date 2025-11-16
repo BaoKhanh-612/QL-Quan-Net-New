@@ -98,6 +98,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
+    <Compile Include="formChonLoaiIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formChonLoaiIn.Designer.cs">
+      <DependentUpon>formChonLoaiIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="formPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Formgoichoi.resx">
       <DependentUpon>Formgoichoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formChonLoaiIn.resx">
+      <DependentUpon>formChonLoaiIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formPrinter.resx">
       <DependentUpon>formPrinter.cs</DependentUpon>
