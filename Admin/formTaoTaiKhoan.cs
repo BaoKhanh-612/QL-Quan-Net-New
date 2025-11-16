@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Thêm thư viện BCrypt.Net
+using BCrypt.Net; // <-- THAY ĐỔI
 
 namespace Quan_Li_Tiem_Net
 {
@@ -131,10 +133,13 @@ namespace Quan_Li_Tiem_Net
                     }
                     else
                     {
+                        // Băm mật khẩu trước khi lưu
+                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(matKhau); // <-- THAY ĐỔI
+
                         TaiKhoan taiKhoanMoi = new TaiKhoan
                         {
                             TenDangNhap = tenDangNhap,
-                            MatKhau = matKhau, // Lưu ý: Nên mã hóa mật khẩu
+                            MatKhau = hashedPassword, // <-- THAY ĐỔI
                             LoaiTaiKhoan = "User"
                         };
 
@@ -194,8 +199,9 @@ namespace Quan_Li_Tiem_Net
 
                     if (tkSua != null)
                     {
-                        // Cập nhật mật khẩu (NÊN MÃ HÓA)
-                        tkSua.MatKhau = matKhau;
+                        // Băm mật khẩu mới trước khi cập nhật
+                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(matKhau); // <-- THAY ĐỔI
+                        tkSua.MatKhau = hashedPassword; // <-- THAY ĐỔI
                         db.SubmitChanges();
 
                         MessageBox.Show("Đã cập nhật mật khẩu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);

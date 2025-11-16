@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Thêm thư viện BCrypt.Net
+using BCrypt.Net;
 
 namespace Quan_Li_Tiem_Net
 {
@@ -61,14 +63,19 @@ namespace Quan_Li_Tiem_Net
                 }
 
                 // 5. Kiểm tra mật khẩu cũ
-                if (user.MatKhau != oldPass)
+                // Thay vì so sánh văn bản thuần, ta dùng BCrypt.Verify
+                // Nó sẽ so sánh mật khẩu cũ người dùng nhập (oldPass)
+                // với chuỗi băm trong database (user.MatKhau)
+                if (!BCrypt.Net.BCrypt.Verify(oldPass, user.MatKhau))
                 {
                     MessageBox.Show("Mật khẩu cũ không chính xác!");
                 }
                 else
                 {
-                    // 6. Cập nhật mật khẩu mới
-                    user.MatKhau = newPass;
+                    // 6. Băm mật khẩu mới trước khi cập nhật
+                    string hashedNewPassword = BCrypt.Net.BCrypt.HashPassword(newPass);
+                    user.MatKhau = hashedNewPassword; // Lưu chuỗi băm vào CSDL
+
                     db.SubmitChanges();
                     MessageBox.Show("Đổi mật khẩu thành công!");
 
