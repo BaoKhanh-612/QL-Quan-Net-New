@@ -202,5 +202,12 @@ namespace Quan_Li_Tiem_Net
             // Hiển thị form
             fChangePass.ShowDialog();
         }
+
+        private void inHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formPrinter form = new formPrinter();
+            form.Show();
+
+        }
     }
 }

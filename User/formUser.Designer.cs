@@ -56,6 +56,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.inHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -174,7 +175,8 @@
             this.cấuHìnhMáyToolStripMenuItem,
             this.toolStripSeparator3,
             this.đổiMậtKhẩuToolStripMenuItem,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.inHóaĐơnToolStripMenuItem});
             this.trợGiúpToolStripMenuItem.Font = new System.Drawing.Font("UTM Banque", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
@@ -303,6 +305,13 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // inHóaĐơnToolStripMenuItem
+            // 
+            this.inHóaĐơnToolStripMenuItem.Name = "inHóaĐơnToolStripMenuItem";
+            this.inHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.inHóaĐơnToolStripMenuItem.Text = "in hóa đơn";
+            this.inHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.inHóaĐơnToolStripMenuItem_Click);
+            // 
             // formUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,5 +365,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem inHóaĐơnToolStripMenuItem;
     }
 }
