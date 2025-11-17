@@ -24,7 +24,7 @@ namespace Quan_Li_Tiem_Net.Admin
 
             // 3 Nút chức năng (Giả sử nút mới tên là btnThemMoi)
             btnThemMoi.Click += btnThemMoi_Click; // Nút "Thêm mới"
-            btnThem.Click += BtnThem_Click;     // Nút "Chỉnh sửa"
+            btnsua.Click += BtnThem_Click;     // Nút "Chỉnh sửa"
             btnXoa.Click += BtnXoa_Click;       // Nút "Xóa"
 
             btnQuayVe.Click += BtnQuayVe_Click;
@@ -45,7 +45,7 @@ namespace Quan_Li_Tiem_Net.Admin
 
             // Bật/tắt các nút
             btnThemMoi.Enabled = true;     // Bật nút "Thêm mới"
-            btnThem.Enabled = false;       // Tắt nút "Chỉnh sửa"
+            btnsua.Enabled = false;       // Tắt nút "Chỉnh sửa"
             btnXoa.Enabled = false;        // Tắt nút "Xóa"
         }
 
@@ -55,8 +55,8 @@ namespace Quan_Li_Tiem_Net.Admin
             txtMaDoUong.ReadOnly = true; // KHÓA MÃ LẠI
 
             // Bật/tắt các nút
-            btnThemMoi.Enabled = true;    // Tắt nút "Thêm mới"
-            btnThem.Enabled = true;        // Bật nút "Chỉnh sửa"
+            btnThemMoi.Enabled = false;    // Tắt nút "Thêm mới"
+            btnsua.Enabled = true;        // Bật nút "Chỉnh sửa"
             btnXoa.Enabled = true;         // Bật nút "Xóa"
         }
 

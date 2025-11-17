@@ -312,15 +312,14 @@
             this.btnQuayVe.TabIndex = 11;
             this.btnQuayVe.Text = "⬅️ QUAY VỀ";
             this.btnQuayVe.UseVisualStyleBackColor = false;
-
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1230, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(1247, -22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(235, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -337,6 +336,7 @@
             this.Controls.Add(this.btnQuayVe);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Formgoichoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formgoichoi";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoi)).EndInit();

@@ -130,5 +130,8 @@ namespace Quan_Li_Tiem_Net
             //  vào form Admin khi form Thống kê đang mở)
             fThongKe.ShowDialog();
         }
+
+        
+        
     }
 }

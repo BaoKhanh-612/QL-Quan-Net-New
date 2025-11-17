@@ -35,7 +35,7 @@
             this.txtTenDoUong = new System.Windows.Forms.TextBox();
             this.txtMaDoUong = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
             this.lblGiaTien = new System.Windows.Forms.Label();
             this.lblMaDoUong = new System.Windows.Forms.Label();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -100,17 +100,16 @@
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // btnThem
+            // btnsua
             // 
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(218, 505);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(146, 42);
-            this.btnThem.TabIndex = 9;
-            this.btnThem.Text = "Chỉnh sửa";
-            this.btnThem.UseVisualStyleBackColor = true;
-          
+            this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsua.Location = new System.Drawing.Point(218, 505);
+            this.btnsua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(146, 42);
+            this.btnsua.TabIndex = 9;
+            this.btnsua.Text = "Chỉnh sửa";
+            this.btnsua.UseVisualStyleBackColor = true;
             // 
             // lblGiaTien
             // 
@@ -154,7 +153,7 @@
             this.panel2.Controls.Add(this.txtTenDoUong);
             this.panel2.Controls.Add(this.txtMaDoUong);
             this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnThem);
+            this.panel2.Controls.Add(this.btnsua);
             this.panel2.Controls.Add(this.lblGiaTien);
             this.panel2.Controls.Add(this.lblTenDoUong);
             this.panel2.Controls.Add(this.lblMaDoUong);
@@ -281,7 +280,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1385, -10);
+            this.pictureBox1.Location = new System.Drawing.Point(1299, -16);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(228, 170);
@@ -307,7 +306,7 @@
             this.btnQuayVe.BackColor = System.Drawing.Color.IndianRed;
             this.btnQuayVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuayVe.ForeColor = System.Drawing.Color.Black;
-            this.btnQuayVe.Location = new System.Drawing.Point(144, 22);
+            this.btnQuayVe.Location = new System.Drawing.Point(13, 22);
             this.btnQuayVe.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuayVe.Name = "btnQuayVe";
             this.btnQuayVe.Size = new System.Drawing.Size(160, 43);
@@ -319,13 +318,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1633, 721);
+            this.ClientSize = new System.Drawing.Size(1628, 721);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQuayVe);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormDrrink";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDrrink";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -343,7 +344,7 @@
         private System.Windows.Forms.TextBox txtTenDoUong;
         private System.Windows.Forms.TextBox txtMaDoUong;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Label lblGiaTien;
         private System.Windows.Forms.Label lblMaDoUong;
         private System.Windows.Forms.ColumnHeader columnHeader3;

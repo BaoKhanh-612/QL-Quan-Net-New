@@ -308,6 +308,7 @@
             this.Controls.Add(this.pnlFilter);
             this.Controls.Add(this.pnlTop);
             this.Name = "FormThongKe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThongKe";
             this.pnlLineChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();

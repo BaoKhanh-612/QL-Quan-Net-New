@@ -57,7 +57,7 @@ namespace Quan_Li_Tiem_Net.Admin
             txtMaMonAn.ReadOnly = true; // KHÓA MÃ LẠI
 
             // SỬA Ở ĐÂY: Đổi tên nút
-            btnThem.Enabled = true;    // Tắt nút "Thêm mới" (tên btnThem)
+            btnThem.Enabled = false;    // Tắt nút "Thêm mới" (tên btnThem)
             btnsua.Enabled = true;     // Bật nút "Chỉnh sửa" (tên button1)
             btnXoa.Enabled = true;      // Bật nút "Xóa"
         }

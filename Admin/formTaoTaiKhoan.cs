@@ -232,7 +232,7 @@ namespace Quan_Li_Tiem_Net
             dgvDanhSachTaiKhoan.ClearSelection(); // Bỏ chọn trên bảng
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnexit1(object sender, EventArgs e)
         {
             this.Close();
         }

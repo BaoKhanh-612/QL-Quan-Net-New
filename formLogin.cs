@@ -26,35 +26,7 @@ namespace Quan_Li_Tiem_Net
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            // ----- BẮT ĐẦU CODE TẠM THỜI -----
-            // Mục đích: Dùng để băm mật khẩu cho 1 tài khoản (ví dụ: admin)
-            // vì ta không thể đăng nhập bằng mật khẩu cũ (chưa băm).
-            if (username == "admin" && password == "convert_admin_pass")
-            {
-                try
-                {
-                    databaseDataContext db = new databaseDataContext();
-                    var user = db.TaiKhoans.SingleOrDefault(u => u.TenDangNhap == "admin");
-                    if (user != null)
-                    {
-                        // !!! THAY "admin123" bằng MẬT KHẨU MỚI BẠN MUỐN ĐẶT
-                        string newHashedPassword = BCrypt.Net.BCrypt.HashPassword("1");
-                        user.MatKhau = newHashedPassword;
-                        db.SubmitChanges();
-
-                        MessageBox.Show("THÀNH CÔNG!\n\nMật khẩu cho 'admin' đã được băm. " +
-                                      "Bây giờ hãy đăng nhập lại bằng mật khẩu mới ('1').");
-                        return; // Dừng lại, không chạy code đăng nhập bên dưới
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi convert: " + ex.Message);
-                    return;
-                }
-            }
-            // ----- KẾT THÚC CODE TẠM THỜI -----
-
+           
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {

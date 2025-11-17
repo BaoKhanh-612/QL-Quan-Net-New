@@ -52,7 +52,7 @@
             this.txtXacNhanMatKhau = new System.Windows.Forms.TextBox();
             this.lblTenDangNhap = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnexit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachTaiKhoan)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -310,7 +310,7 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlLeft.Controls.Add(this.button1);
+            this.pnlLeft.Controls.Add(this.btnexit);
             this.pnlLeft.Controls.Add(this.pictureBox1);
             this.pnlLeft.Controls.Add(this.btnsua);
             this.pnlLeft.Controls.Add(this.btnThem);
@@ -330,19 +330,19 @@
             this.pnlLeft.Size = new System.Drawing.Size(775, 826);
             this.pnlLeft.TabIndex = 6;
             // 
-            // button1
+            // btnexit
             // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 43);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "⬅️ QUAY VỀ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnexit.BackColor = System.Drawing.Color.IndianRed;
+            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexit.ForeColor = System.Drawing.Color.Black;
+            this.btnexit.Location = new System.Drawing.Point(13, 13);
+            this.btnexit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(160, 43);
+            this.btnexit.TabIndex = 14;
+            this.btnexit.Text = "⬅️ QUAY VỀ";
+            this.btnexit.UseVisualStyleBackColor = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit1);
             // 
             // formTaoTaiKhoan
             // 
@@ -353,6 +353,7 @@
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.pnlLeft);
             this.Name = "formTaoTaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formTaoTaiKhoan";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachTaiKhoan)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -391,6 +392,6 @@
         private System.Windows.Forms.TextBox txtXacNhanMatKhau;
         private System.Windows.Forms.Label lblTenDangNhap;
         private System.Windows.Forms.Panel pnlLeft;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnexit;
     }
 }
